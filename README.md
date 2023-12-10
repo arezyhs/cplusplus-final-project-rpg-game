@@ -1,8 +1,3 @@
-# cplusplus-final-project-rpg-game
-
-# Proyek Akhir Pemrograman Dasar
-End - Project
-
 # Tujuan
 Membuat game teks berbasis RPG yang dapat dijalankan di terminal C++ atau sebagai file.exe.
 
