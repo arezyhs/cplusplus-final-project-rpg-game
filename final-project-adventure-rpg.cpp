@@ -133,59 +133,71 @@ void heal(Player& player) {
 }
 
 // fitur explore dalam game dan hal yang terjadi ketika sedang berjalan.
+// fitur explore dalam game dan hal yang terjadi ketika sedang berjalan.
 void explore(Player& player) {
     system("cls");
     cout << "Anda melanjutkan perjalanan anda yang tak berujung..." << endl;
 
-    // kemungkinan player bertemu dengan hal-hal selama bermain.
-    int randomEnemyType = rand() % 5;
-    Enemy* enemy;
+    // Kemungkinan player bertemu dengan hal-hal selama bermain.
+    int randomEvent = rand() % 3;
 
-    if (player.level != 10) { // jika tidak = level 10, lawan musuh biasa random.
-    switch (randomEnemyType) {
-        case 0:
-            enemy = new GoblinEnemy();
-            break;
-        case 1:
-            enemy = new WizardEnemy();
-            break;
-        case 2:
-            enemy = new GiantEnemy();
-            break;
-        case 3:
-            enemy = new DarkKnightEnemy();
-            break;
-        default:
-            enemy = new GoblinEnemy();
-    }
+    if (randomEvent == 0) {
+        // Pemain menemukan koin
+        player.coins += 5;
+        cout << "Hore! Anda menemukan 5 koin selama perjalanan!" << endl;
+        system("pause");
+    } else {
+        // Pemain bertemu musuh
+        int randomEnemyType = rand() % 5;
+        Enemy* enemy;
 
-    enemy->displayIntro();
-    combat(player, *enemy);
+        if (player.level != 10) { // Jika tidak = level 10, lawan musuh biasa random.
+            switch (randomEnemyType) {
+                case 0:
+                    enemy = new GoblinEnemy();
+                    break;
+                case 1:
+                    enemy = new WizardEnemy();
+                    break;
+                case 2:
+                    enemy = new GiantEnemy();
+                    break;
+                case 3:
+                    enemy = new DarkKnightEnemy();
+                    break;
+                default:
+                    enemy = new GoblinEnemy();
+            }
 
-    delete enemy;
-    } else { // kalau level 10, ketemu boss.
-        enemy = new FinalBossEnemy();
-        enemy->displayIntro();
-        combat(player, *enemy);
+            enemy->displayIntro();
+            combat(player, *enemy);
 
-        delete enemy;
+            delete enemy;
+        } else { // Jika level 10, ketemu boss.
+            enemy = new FinalBossEnemy();
+            enemy->displayIntro();
+            combat(player, *enemy);
 
-        if (player.health > 0) {
-            // Menang
-            system("pause");
-            cout << "Selamat! Anda berhasil mengalahkan penjaga dari hutan ini!" << endl;
-            cout << "Anda telah menyelesaikan perjalanan Anda!" << endl;
-            cout << "Terima kasih sudah bermain!" << endl;
-            system("pause");
-            exit(0);
-        } else {
-            // Kalah
-            cout << "Kamu dikalahkan oleh Final Boss!" << endl;
-            cout << "GAME OVER" << endl;
-            exit(0);
+            delete enemy;
+
+            if (player.health > 0) {
+                // Menang
+                system("pause");
+                cout << "Selamat! Anda berhasil mengalahkan penjaga dari jalan ini!" << endl;
+                cout << "Anda telah menyelesaikan perjalanan Anda!" << endl;
+                cout << "Terima kasih sudah bermain!" << endl;
+                system("pause");
+                exit(0);
+            } else {
+                // Kalah
+                cout << "Kamu dikalahkan oleh Final Boss!" << endl;
+                cout << "GAME OVER" << endl;
+                exit(0);
+            }
         }
     }
 }
+
 
 // fitur pertempuran melawan musuh
 void combat(Player& player, Enemy& enemy) {
