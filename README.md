@@ -5,8 +5,8 @@
 
 <h2>Contributors</h2>
     <ul>
-        <li>arezyh.s</li>
-        <li>shylniac</li>
+        <li>arezyh.s https://github.com/arezyhs </li>
+        <li>shylniac https://github.com/shylniac </li>
     </ul>
 
 <h2>Features</h2>
