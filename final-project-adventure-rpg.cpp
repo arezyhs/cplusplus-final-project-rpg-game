@@ -146,6 +146,12 @@ void explore(Player& player) {
         player.coins += 5;
         cout << "Hore! Anda menemukan 5 koin selama perjalanan!" << endl;
         system("pause");
+    else if (randomEvent == 1) {
+        // Pemain menemukan jebakan!
+        player.health -= 3;
+        cout << "Anda terjatuh dalam lubang!" << endl;
+        cout << "Darah anda berkurang 3" << endl;
+        system("pause");
     } else {
         // Pemain bertemu musuh
         int randomEnemyType = rand() % 5;
