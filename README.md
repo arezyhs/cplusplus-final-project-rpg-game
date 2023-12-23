@@ -1,34 +1,84 @@
-# Tujuan
-Membuat game teks berbasis RPG yang dapat dijalankan di terminal C++ atau sebagai file.exe.
+<h1>Adventure RPG Game</h1>
 
-# Glosarium
-Character (Karakter): Karakter fiksi yang dikendalikan oleh pemain di dalam permainan.
-Player (Pemain): Pengguna aplikasi atau pemain dalam permainan.
-Class (Kelas): Peran yang dapat dipilih oleh pemain, seperti warrior, archer, atau knight.
-Stats (Statistik): Representasi data pemain yang ada di dalam permainan.
-Health (Kesehatan): Poin darah pemain; jika ≤ 0, permainan berakhir atau kembali ke save game sebelumnya.
-Damage (Kerusakan): Poin kekuatan pemain melawan musuh.
-Defense (Pertahanan): Poin pertahanan pemain terhadap kerusakan musuh.
-Level (Tingkat): Tingkatan level pemain.
-Coins (Koin): Jumlah uang pemain yang dapat digunakan untuk upgrade.
-Enemy (Musuh): Musuh yang harus dilawan oleh pemain untuk mendapatkan koin dan meningkatkan tingkat level.
-Boss: Musuh besar yang muncul setiap 10 level.
+<h2>Overview</h2>
+<p>This project is a simple text-based RPG game written in C++. Players navigate through a fantasy world, encountering enemies and making choices to progress in the game.</p>
 
-#Bagaimana Permainan Berfungsi?
+<h2>Contributors</h2>
+    <ul>
+        <li>arezyh.s</li>
+        <li>shylniac</li>
+    </ul>
 
-# Awal Permainan
-Pemain memulai perjalanan dari awal atau memulai permainan baru. Pemain diminta untuk memasukkan username karakternya dan memilih class (misalnya: warrior, archer, knight). Setiap class memiliki nilai statistik tersendiri (health, defense, damage, dll).
+<h2>Features</h2>
+    <ul>
+        <li><strong>Player Class:</strong> The game includes a <code>Player</code> class with attributes such as name, level, experience, health, attack, coins, and defense.</li>
+        <li><strong>Enemy Classes:</strong> Various enemy classes, such as <code>GoblinEnemy</code>, <code>WizardEnemy</code>, <code>DarkKnightEnemy</code>, <code>GiantEnemy</code>, and <code>FinalBossEnemy</code>, each with unique characteristics.</li>
+        <li><strong>Combat System:</strong> Players engage in turn-based combat with enemies, choosing to attack or run away. Combat outcomes impact player stats and progression.</li>
+        <li><strong>Exploration:</strong> Players can explore the game world, encountering random events like finding coins or facing enemies. Level 10 introduces a final boss encounter.</li>
+        <li><strong>Healing:</strong> Players can choose to heal by spending coins, replenishing health during their journey.</li>
+        <li><strong>Save and Load:</strong> The game supports saving and loading player progress using a text file (<code>player_progress.txt</code>).</li>
+        <li><strong>Class Selection:</strong> Players can choose their character class at the beginning, affecting starting stats.</li>
+    </ul>
 
-# Inti Permainan
-Pemain memasuki bagian utama permainan di mana mereka dapat mengontrol karakter yang telah dibuat sebelumnya dengan beberapa opsi pilihan. Permainan berlanjut hingga karakter mati (health ≤ 0) atau pemain memilih opsi keluar (exit).
+<h2>How to Play</h2>
+    <ol>
+        <li>Enter your character's name.</li>
+        <li>Choose a character class: Warrior, Archer, or Knight.</li>
+        <li>Embark on an adventure, exploring the world, battling enemies, and leveling up.</li>
+        <li>Use the options to explore, heal, save, load, or exit the game.</li>
+    </ol>
 
-# Opsi yang tersedia untuk pemain di inti permainan meliputi:
-Explore (Jelajahi): Pemain dapat memilih untuk melawan musuh atau melarikan diri jika bertemu. Jika melawan, masuk ke mode pertarungan (combat/battle).
-Heal (Obati): Pemain dapat berobat dengan membayar 50 koin.
-Save (Simpan): Menyimpan progress pemain ke dalam file progress.txt.
-Load (Muat): Melanjutkan progress pemain sebelumnya dengan membaca isi dari progress.txt.
-Exit (Keluar): Keluar dari permainan.
+<h2>Character Classes</h2>
+    <ul>
+        <li><strong>Warrior:</strong>
+            <ul>
+                <li>Health: 100</li>
+                <li>Attack: 20</li>
+                <li>Defense: 5</li>
+            </ul>
+        </li>
+        <li><strong>Archer:</strong>
+            <ul>
+                <li>Health: 75</li>
+                <li>Attack: 20</li>
+                <li>Defense: 20</li>
+            </ul>
+        </li>
+        <li><strong>Knight:</strong>
+            <ul>
+                <li>Health: 150</li>
+                <li>Attack: 25</li>
+                <li>Defense: 10</li>
+            </ul>
+        </li>
+    </ul>
 
-#Akhir Permainan
-Jika pemain mencapai level 10, pemain akan dihadapkan pada boss terakhir yang harus dilawan.
-Setelah pemain mengalahkan boss, permainan berakhir dan outro dimulai.
+<h2>Cheat Code (for testing)</h2>
+    <p>Press <code>9</code> when choosing a character class to activate cheat mode, setting your character to level 10 with enhanced stats.</p>
+
+<h2>Dependencies</h2>
+    <ul>
+        <li>C++ Standard Library</li>
+    </ul>
+
+<h2>How to Compile and Run</h2>
+    <ol>
+        <li>Make sure you have a C++ compiler installed.</li>
+        <li>Compile the source code.
+            <pre>
+                <code>g++ -o adventure_rpg adventure_rpg.cpp</code>
+            </pre>
+        </li>
+        <li>Run the executable.
+            <pre>
+                <code>./adventure_rpg</code>
+            </pre>
+        </li>
+    </ol>
+
+<h2>Acknowledgments</h2>
+    <p>Thank you for playing the Adventure RPG game! Have fun exploring the fantasy world and overcoming challenges!</p>
+
+</body>
+
+</html>
